@@ -1,0 +1,29 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+terraform/*.tfstate
+terraform/*.tfstate.*
+
+# If you prefer the allow list template instead of the deny list, see community template:
+# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
+#
+# Binaries for programs and plugins
+terraform/*.exe
+terraform/*.exe~
+terraform/*.dll
+terraform/*.so
+terraform/*.dylib
+
+# Test binary, built with `go test -c`
+terraform/*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+terraform/*.out
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+# Go workspace file
+/lambda-handler/go.work
+/lambda-handler/bin/*

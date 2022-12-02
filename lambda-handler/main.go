@@ -31,8 +31,15 @@ func handler(ctx context.Context, sqsEvent events.SQSEvent) (error) {
         if err != nil {
             panic("Error message format, not json: " + err.Error())
         }
+
+        // Processing Start
+
+        processedBody := HandleMessage(string(body))
+
+        // Processing End
+
         res, err := svc.SendMessage(&sqs.SendMessageInput{
-          MessageBody:    aws.String(string(body)),
+          MessageBody:    aws.String(processedBody),
           QueueUrl:       &sendURL,
         })
         if err != nil {

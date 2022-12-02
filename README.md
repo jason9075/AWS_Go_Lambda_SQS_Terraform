@@ -20,3 +20,10 @@ aws sqs send-message --queue-url $(terraform output sqs1_url) --region <region> 
 ```
 terraform destroy
 ```
+
+# Golang Lambda
+
+## Unit Test
+```
+go test -v -cover
+```

@@ -19,7 +19,7 @@ func TestHandleMessage_BasicMessage(t *testing.T) {
 	expect := readMessage("test_message/normal_processed")
 
 	actual := HandleMessage(inputMessage)
-	assert.Equal(t, actual, expect)
+	assert.Equal(t, expect, actual)
 
 }
 

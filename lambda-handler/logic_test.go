@@ -4,13 +4,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"io/ioutil"
 	"testing"
-    "strings"
 )
 
 func readMessage(path string)(string){
 	messageBinary, _ := ioutil.ReadFile(path)
     message := string(messageBinary)
-    message = strings.TrimSuffix(message, "\n")
     return message
 }
 
@@ -19,7 +17,7 @@ func TestHandleMessage_BasicMessage(t *testing.T) {
 	expect := readMessage("test_message/normal_processed")
 
 	actual := HandleMessage(inputMessage)
-	assert.Equal(t, expect, actual)
+	assert.JSONEq(t, expect, actual)
 
 }
 
